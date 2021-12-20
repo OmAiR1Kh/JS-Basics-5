@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>something</title>
+</head>
+<body>
+    <div>
+        <input type="tex" placeholder="Enter your guess here" id="inp">
+        <button id="btn">submit</button>
+    </div>
+    <script>
+        
+        var i =0
+        var random = Math.floor(Math.random() * 100);console.log(random);
+        var arr =[];
+        const weird =()=>{
+            var guess = parseInt(document.getElementById('inp').value)
+                for (let k=0; k<i; k++ ){
+                    if(arr[k] === guess){
+
+                        console.log('this number is repeated try another number')
+                        return   
+                    }
+                }
+                arr.push(guess)
+                console.log(arr)
+                    if(guess == random){
+                        console.log(`Congrats you solved it in ${i+1} times`)
+                    } else if (guess > random){
+                        console.log('try a smaller number')
+                        i++
+                    } else {
+                        console.log('try a greater number')
+                        i++
+                    }
+                    console.log(i)
+                if (i>7){
+                    console.log('you tried the maximum number of tries sorry')
+                    document.getElementById('inp').style.display = 'none'
+                }
+        }
+        document.onclick = (e)=>{
+            const id = e.target.id    
+            if (id === "btn"){
+                weird()
+            }
+        }
+       
+
+    </script>
+</body>
+</html>

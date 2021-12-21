@@ -18,12 +18,12 @@
                 var num = parseInt(document.getElementById('inp').value)
                 var sum_num =0
 
-                if (num != 0){
+                if (num>0){
                 for (i=1; i<=num; i++)
                 sum_num += i
                 console.log(sum_num)
                 }else{
-                exit()
+                    console.log('please enter a positive number')
                 }
             } 
         }        
